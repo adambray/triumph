@@ -17,8 +17,6 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    ".DS_Store",
-    ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -41,7 +39,6 @@ Gem::Specification.new do |s|
     "lib/generators/achievement_observer/templates/achievement_observer.rb",
     "lib/generators/triumph/.DS_Store",
     "lib/generators/triumph/triumph_generator.rb",
-    "lib/tasks/triumph_tasks.rake",
     "lib/triumph.rb",
     "rails/init.rb",
     "test/helper.rb",
