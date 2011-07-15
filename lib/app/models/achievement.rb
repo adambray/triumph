@@ -10,8 +10,8 @@ class Achievement < ActiveRecord::Base
     
     potential_achievements.each do |achievement|
       total = user.send(object.class.to_s.pluralize.underscore.to_sym).where(achievement.conditions)
-      if total > achievment.quantity
-        user.grant_achievment(achievement)
+      if total > achievement.quantity
+        user.grant_achievement(achievement)
       end
     end
   end
