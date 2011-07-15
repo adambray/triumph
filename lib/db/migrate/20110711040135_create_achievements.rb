@@ -4,6 +4,7 @@ class CreateAchievements < ActiveRecord::Migration
       t.string  :name
       t.text    :description
       t.string  :observe_class
+      t.string  :conditions
       t.int     :quantity
       
       t.timestamps
