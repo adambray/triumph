@@ -58,6 +58,8 @@ GEM
       activesupport (= 3.0.9)
       bundler (~> 1.0)
       railties (= 3.0.9)
+    rails3-generators (0.17.4)
+      railties (>= 3.0.0)
     railties (3.0.9)
       actionpack (= 3.0.9)
       activesupport (= 3.0.9)
@@ -80,6 +82,7 @@ DEPENDENCIES
   bundler (~> 1.0.0)
   jeweler (~> 1.6.4)
   rails (>= 3.0.0)
+  rails3-generators
   rcov
   rdoc
   shoulda
