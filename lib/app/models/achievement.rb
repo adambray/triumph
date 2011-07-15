@@ -5,7 +5,7 @@ class Achievement < ActiveRecord::Base
   def self.check_achievements_for(object)
     
     user = object.user
-    object_class = object.class.underscore.downcase
+    object_class = object.class.to_s.underscore.downcase
     potential_achievements = Achievement.where("observe_class = ?", object_class)    
     
     potential_achievements.each do |achievement|
