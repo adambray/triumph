@@ -9,7 +9,7 @@ class Achievement < ActiveRecord::Base
     potential_achievements = Achievement.where("observe_class = ?", object_class)    
     
     potential_achievements.each do |achievement|
-      total = user.send(object.class.to_s.pluralize.underscore.to_sym).where(achievement.conditions)
+      total = user.send(object.class.to_s.pluralize.underscore.to_sym).where(achievement.conditions).count
       if total > achievement.quantity
         user.grant_achievement(achievement)
       end
