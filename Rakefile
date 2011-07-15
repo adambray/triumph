@@ -17,9 +17,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "triumph"
   gem.homepage = "http://github.com/adambray/triumph"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "adam.bray@yale.edu"
+  gem.summary = %Q{Trimuph helps you add achievements to your app}
+  gem.description = %Q{Triumph makes it easy to add achievements to your app, even dynamically at runtime.}
+  gem.email = "adam.bray@gmail.com"
   gem.authors = ["Adam Bray"]
   # dependencies defined in Gemfile
 end
@@ -42,8 +42,8 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
