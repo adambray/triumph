@@ -27,14 +27,15 @@ pkg
 #
 # For MacOS:
 #
-#.DS_Store
+.DS_Store
+.document
 
 # For TextMate
-#*.tmproj
-#tmtags
+*.tmproj
+tmtags
 
 # For emacs:
-#*~
+*~
 #\#*
 #.\#*
 
