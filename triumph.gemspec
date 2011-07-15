@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{triumph}
-  s.version = "0.1.1"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Adam Bray}]
@@ -27,8 +27,11 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/.DS_Store",
     "lib/achievements.rb",
+    "lib/app/controllers/achievements_controller.rb",
     "lib/app/models/achievement.rb",
     "lib/app/models/completed_achievement.rb",
+    "lib/app/views/achievements/index.html.erb",
+    "lib/app/views/achievements/new.html.erb",
     "lib/db/.DS_Store",
     "lib/db/migrate/20110711040135_create_achievements.rb",
     "lib/db/migrate/20110712025245_create_completed_achievements.rb",
@@ -42,7 +45,8 @@ Gem::Specification.new do |s|
     "lib/triumph.rb",
     "rails/init.rb",
     "test/helper.rb",
-    "test/test_triumph.rb"
+    "test/test_triumph.rb",
+    "triumph.gemspec"
   ]
   s.homepage = %q{http://github.com/adambray/triumph}
   s.licenses = [%q{MIT}]
