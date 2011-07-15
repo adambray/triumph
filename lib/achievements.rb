@@ -8,7 +8,7 @@ module Achievements
   
   def grant_achievement(achievement)
     unless self.has_achievement?(achievement)
-      CompletedAchievement.create!(:achievemnt_id => achievement.id, :user_id => self.id)
+      CompletedAchievement.create!(:achievement_id => achievement.id, :user_id => self.id)
     end
   end
   
