@@ -2,6 +2,10 @@ module Achievements
   
   def self.included(base)
     base.class_eval do
+      #for some reason, this is not adding the proper association to the users model
+      # when I do 'include Achievemnts', though everything else works as expected.
+      # For now, I'm manually adding the 'has_many :completed_achievements' to the user
+      # model in my sample app, but I need to figure this out.
       has_many :completed_achievements
     end
   end
