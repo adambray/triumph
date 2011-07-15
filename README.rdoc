@@ -1,6 +1,26 @@
 = triumph
 
-Description goes here.
+Triumph is a gem that not only lets you add achievements to your rails app, but lets you dynamically define new achievements (e.g. by an admin) at runtime.
+
+== Use
+
+To use Triumph, simply do the following:
+
+* Include the gem:
+** Add gem 'triumph' to your gemfile
+* Create database tables:
+** rails generate triumph
+** rake db:migrate
+* Add an observer on any objects you want to count for your users' achevements
+** rake generate acheivement_observer Post
+** rake generate acheivement_observer Comment
+** add those observers to the 'config.active_record.observers' variable in config/application.rb 
+* In your users model, add:
+** include Achievements
+
+That's it. You can now create new Acheivements, and when a post is saved, for example, Triumph will check if the conditions are met.
+
+For more info, see the sample app at http://github.com/adambray/triumph-sample.git
 
 == Contributing to triumph
  
