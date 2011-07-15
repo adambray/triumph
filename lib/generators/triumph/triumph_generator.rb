@@ -1,5 +1,5 @@
 class TriumphGenerator < Rails::Generators::Base
-  source_root File.expand_path('../templates', __FILE__)
+  source_root File.expand_path('../../lib/db/migrate', __FILE__)
   
   def generate
     copy_file "20110711040135_create_achievements.rb", "db/migrate/#{Time.now.utc.strftime("%Y%m%d%H%M%S")}_create_achievements.rb"
