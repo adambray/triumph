@@ -2,7 +2,7 @@ module Achievements
   
   def self.included(base)
     base.class_eval do
-      has_many :achievements
+      has_many :completed_achievements
     end
   end
   
