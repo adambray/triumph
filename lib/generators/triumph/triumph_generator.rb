@@ -1,5 +1,3 @@
-require 'rails_generator'
-
 class TriumphGenerator < Rails::Generators::Base
   source_root File.expand_path('../../lib/db/migrate', __FILE__)
   
