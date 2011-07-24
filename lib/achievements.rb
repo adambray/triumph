@@ -17,7 +17,7 @@ module Achievements
   end
   
   def has_achievement?(achievement)
-    CompletedAchievement.where("achievement_id = ?", achievement.id).count >= 1     
+    CompletedAchievement.where("achievement_id = ? AND user_id = ?", achievement.id, self.id).count >= 1     
   end
   
 end
