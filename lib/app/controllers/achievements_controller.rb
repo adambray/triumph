@@ -1,4 +1,4 @@
-class AchievementsController < ApplicationController
+class AchievementsController
   # GET /achievements
   # GET /achievements.xml
   def index
