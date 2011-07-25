@@ -77,7 +77,7 @@ module Triumph
       @achievement.destroy
 
       respond_to do |format|
-        format.html { redirect_to(achievements_url) }
+        format.html { redirect_to(triumph_achievements_url) }
         format.xml  { head :ok }
       end
     end
