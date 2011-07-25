@@ -20,7 +20,7 @@
     <td><%= achievement.conditions %></td>
     <td><%= achievement.quantity %></td>
     <td><%= link_to 'Show', achievement %></td>
-    <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
+    <td><%= link_to 'Edit', edit_triumph_achievement_path(achievement) %></td>
     <td><%= link_to 'Destroy', achievement, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -28,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Achievement', new_achievement_path %>
+<%= link_to 'New Achievement', new_triumph_achievement_path %>
