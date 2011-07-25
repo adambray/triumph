@@ -6,6 +6,9 @@ module Triumph
     has_many :completed_achievements, :class_name => "Triumph::CompletedAchievement"
     has_many :achievement_conditions, :class_name => "Triumph::AchievementCondition"
   
+  
+    # This method is currently long, and I plan to refactor much of it tomorrow
+    # I plan to move much of the checking logic into the CompletedAchievement class
     def self.check_achievements_for(object)
     
       user = object.user
