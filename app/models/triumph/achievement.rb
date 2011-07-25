@@ -17,7 +17,12 @@ module Triumph
         if total >= achievement.quantity
           grant_achievement = true
           achievement.achievement_conditions.each do |condition|
-            if !condition.total_value.send(condition.total_operator.to_s, user.send(object.class.to_s.pluralize.underscore.to_sym).select{|o| o.send(condition.comparison_attribute.to_s).count.send(condition.comparison_operator.to_s, condition.comparison_value.to_s)})
+            total_value = condition.total_value
+            objects = user.send(object.class.to_s.pluralize.underscore.to_sym)
+#FAILS HERE
+            objects_meeting_condition = objects.select{|o| o.send(condition.comparison_attribute).send(condition.comparison_operator, condition.comparison_value)}.count
+
+            if total_value.send(condition.total_operator.to_s, objects_meeting_condition)
               grant_achievemnt = false
             end            
           end
