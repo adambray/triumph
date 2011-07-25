@@ -41,7 +41,7 @@ module Triumph
     # POST /achievements
     # POST /achievements.xml
     def create
-      @achievement = Achievement.new(params[:achievement])
+      @achievement = Achievement.new(params[:triumph_achievement])
 
       respond_to do |format|
         if @achievement.save
@@ -60,7 +60,7 @@ module Triumph
       @achievement = Achievement.find(params[:id])
 
       respond_to do |format|
-        if @achievement.update_attributes(params[:achievement])
+        if @achievement.update_attributes(params[:triumph_achievement])
           format.html { redirect_to(@achievement, :notice => 'Achievement was successfully updated.') }
           format.xml  { head :ok }
         else
