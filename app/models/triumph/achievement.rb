@@ -3,8 +3,8 @@ module Triumph
 
     unloadable
     
-    has_many :completed_achievements
-    has_many :achievement_conditions
+    has_many :completed_achievements, :class_name => "Triumph::CompletedAchievement"
+    has_many :achievement_conditions, :class_name => "Triumph::AchievementCondition"
   
     def self.check_achievements_for(object)
     
