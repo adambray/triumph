@@ -12,8 +12,8 @@ To use Triumph, simply do the following:
   * rails generate triumph
   * rake db:migrate
 * Add an observer on any objects you want to count for your users' achevements
-  * rake generate acheivement_observer Post
-  * rake generate acheivement_observer Comment
+  * rails generate acheivement_observer Post
+  * rails generate acheivement_observer Comment
   * add those observers to the 'config.active_record.observers' variable in config/application.rb 
 * In your users model, add:
   * include Achievements
