@@ -13,7 +13,7 @@ module Triumph
       potential_achievements = Triumph::Achievement.where("observe_class = ?", object_class)    
     
       potential_achievements.each do |achievement|
-        total = user.send(object.class.to_s.pluralize.underscore.to_sym).where(achievement.conditions).count
+        total = user.send(object.class.to_s.pluralize.underscore.to_sym).count
         if total >= achievement.quantity
           grant_achievement = true
           achievement.achievement_conditions.each do |condition|
