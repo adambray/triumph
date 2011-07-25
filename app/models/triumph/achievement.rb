@@ -19,8 +19,19 @@ module Triumph
           achievement.achievement_conditions.each do |condition|
             total_value = condition.total_value
             objects = user.send(object.class.to_s.pluralize.underscore.to_sym)
-#FAILS HERE
-            objects_meeting_condition = objects.select{|o| o.send(condition.comparison_attribute).send(condition.comparison_operator, condition.comparison_value)}.count
+            
+            unless objects.empty?
+              case objects.first.send(condition.comparison_attribute)
+              when Integer
+                comparison_value = condition.comparison_value.to_i
+              when Float
+                comparison_value = condition.comparison_value.to_f
+              when TrueClass, FalseClass
+                comparison_value = condition.comparison_value == "true" ? true : false
+              end
+            end
+                
+            objects_meeting_condition = objects.select{|o| o.send(condition.comparison_attribute).send(condition.comparison_operator, comparison_value)}.count
 
             if total_value.send(condition.total_operator.to_s, objects_meeting_condition)
               grant_achievemnt = false
