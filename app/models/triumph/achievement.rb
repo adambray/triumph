@@ -33,7 +33,7 @@ module Triumph
                 
             objects_meeting_condition = objects.select{|o| o.send(condition.comparison_attribute).send(condition.comparison_operator, comparison_value)}.count
 
-            if total_value.send(condition.total_operator.to_s, objects_meeting_condition)
+            if !objects_meeting_condition.send(condition.total_operator.to_s, total_value)
               grant_achievemnt = false
             end            
           end
