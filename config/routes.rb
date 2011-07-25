@@ -1,5 +1,5 @@
 Rails.application.routes.draw do |map|
 
-  resources :achievements,  :controller => 'triumph/achievements'
+  map.resources :achievements,  :controller => 'triumph/achievements', :path_prefix => "/triumph"
 
 end
