@@ -1,4 +1,9 @@
-require 'triumph/engine' if defined?(Rails)
+module Triumph
+  
+  require 'triumph/engine' if defined?(Rails)
+  require 'triumph/achievements'
+
+end
 
 # require File.dirname(__FILE__) + '/achievements'
 # require File.dirname(__FILE__) + '/app/models/achievement'

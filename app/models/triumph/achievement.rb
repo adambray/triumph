@@ -9,7 +9,7 @@ module Triumph
     
       user = object.user
       object_class = object.class.to_s.underscore.downcase
-      potential_achievements = Achievement.where("observe_class = ?", object_class)    
+      potential_achievements = Triumph::Achievement.where("observe_class = ?", object_class)    
     
       potential_achievements.each do |achievement|
         total = user.send(object.class.to_s.pluralize.underscore.to_sym).where(achievement.conditions).count
