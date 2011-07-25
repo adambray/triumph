@@ -7,7 +7,7 @@ module Triumph
         # when I do 'include Achievemnts', though everything else works as expected.
         # For now, I'm manually adding the 'has_many :completed_achievements' to the user
         # model in my sample app, but I need to figure this out.
-        has_many :completed_achievements
+        has_many :completed_achievements, :class_name => 'Triumph::CompletedAchievement'
       end
     end
   
