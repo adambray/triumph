@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{triumph}
-  s.version = "0.1.4"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Adam Bray}]
-  s.date = %q{2011-07-15}
+  s.authors = ["Adam Bray"]
+  s.date = %q{2011-07-28}
   s.description = %q{Triumph makes it easy to add achievements to your app, even dynamically at runtime.}
   s.email = %q{adam.bray@gmail.com}
   s.extra_rdoc_files = [
@@ -23,32 +23,36 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "lib/.DS_Store",
-    "lib/achievements.rb",
-    "lib/app/controllers/achievements_controller.rb",
-    "lib/app/models/achievement.rb",
-    "lib/app/models/completed_achievement.rb",
-    "lib/app/views/achievements/index.html.erb",
-    "lib/app/views/achievements/new.html.erb",
-    "lib/db/.DS_Store",
-    "lib/db/migrate/20110711040135_create_achievements.rb",
-    "lib/db/migrate/20110712025245_create_completed_achievements.rb",
-    "lib/db/migrate/20110712033351_create_achievement_conditions.rb",
-    "lib/generators/.DS_Store",
-    "lib/generators/achievement_observer/achievement_observer_generator.rb",
-    "lib/generators/achievement_observer/templates/achievement_observer.rb",
-    "lib/generators/triumph/.DS_Store",
-    "lib/generators/triumph/triumph_generator.rb",
+    "app/controllers/triumph/achievements_controller.rb",
+    "app/models/triumph/achievement.rb",
+    "app/models/triumph/achievement_condition.rb",
+    "app/models/triumph/completed_achievement.rb",
+    "app/views/triumph/achievements/_form.html.erb",
+    "app/views/triumph/achievements/edit.html.erb",
+    "app/views/triumph/achievements/index.html.erb",
+    "app/views/triumph/achievements/new.html.erb",
+    "app/views/triumph/achievements/show.html.erb",
+    "config/routes.rb",
+    "lib/rails/generators/achievement_observer/achievement_observer_generator.rb",
+    "lib/rails/generators/achievement_observer/templates/achievement_observer.rb",
+    "lib/rails/generators/triumph/templates/20110711040135_create_achievements.rb",
+    "lib/rails/generators/triumph/templates/20110712025245_create_completed_achievements.rb",
+    "lib/rails/generators/triumph/templates/20110712033351_create_achievement_conditions.rb",
+    "lib/rails/generators/triumph/templates/initializer.rb",
+    "lib/rails/generators/triumph/triumph_generator.rb",
+    "lib/rails/railties/tasks.rake",
     "lib/triumph.rb",
+    "lib/triumph/achievements.rb",
+    "lib/triumph/engine.rb",
     "rails/init.rb",
     "test/helper.rb",
     "test/test_triumph.rb",
     "triumph.gemspec"
   ]
   s.homepage = %q{http://github.com/adambray/triumph}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.5}
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Trimuph helps you add achievements to your app}
 
   if s.respond_to? :specification_version then
