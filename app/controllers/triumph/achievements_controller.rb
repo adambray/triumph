@@ -43,7 +43,7 @@ module Triumph
     # POST /achievements.xml
     def create
       @achievement = Achievement.new(params[:triumph_achievement])
-      @achievement.observe_class.downcase!
+      @achievement.observe_class.singularize.downcase!
 
       if @achievement.save
         achievement_condition = AchievementCondition.new(params[:achievement_condition])
