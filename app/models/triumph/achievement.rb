@@ -27,5 +27,13 @@ module Triumph
       end
     end
   
+    def to_s
+      condition = achievement_conditions.first
+    
+      return "Grant this achievement when a user has more than #{quantity} #{observe_class.pluralize} 
+      and there are #{condition.total_operator} #{condition.total_value}
+      where #{condition.comparison_attribute} is 
+      #{condition.comparison_operator} #{condition.comparison_value}"
+    end
   end
 end

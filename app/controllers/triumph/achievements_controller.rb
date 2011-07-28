@@ -15,6 +15,7 @@ module Triumph
     # GET /achievements/1.xml
     def show
       @achievement = Achievement.find(params[:id])
+      @conditions = @achievement.achievement_conditions
 
       respond_to do |format|
         format.html # show.html.erb
