@@ -6,7 +6,7 @@ class AchievementObserverGenerator < Rails::Generators::Base
   argument :model_name, :type => :string, :description => "The name of the model to observe."
 
   def generate
-    empty_directory "app/models"
+    empty_directory "app/models/triumph"
     template "achievement_observer.rb", "app/models/triumph/#{model_name.underscore}_observer.rb"
   end
 end
