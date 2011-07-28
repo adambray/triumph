@@ -6,7 +6,7 @@ class CreateAchievementConditions < ActiveRecord::Migration
       t.string  :comparison_operator
       t.string  :comparison_value
       t.string  :total_operator
-      t.int     :total_value
+      t.integer :total_value
       
       t.timestamps
     end
