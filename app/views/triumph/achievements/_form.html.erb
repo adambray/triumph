@@ -20,19 +20,16 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :observe_class %><br />
-    <%= f.text_field :observe_class %>
-  </div>
-  <div class="field">
     Grant this achievement when a user has more than
-    <%= f.text_field :quantity %> objects and
+    <%= f.text_field :quantity, :value => "how many" %> <%= f.text_field :observe_class, :value => "objects" %>
     <br />
-    <%= select_tag "achievement_condition[total_operator]", options_for_select([["more than", ">"],["exactly", "=="],["less than", "<"]]) %>
-    <%= text_field_tag "achievement_condition[total_value]" %>
-    where <%= text_field_tag "achievement_condition[comparison_attribute]" %>
+    and there are
+    <%= select_tag "achievement_condition[total_operator]", options_for_select([["greater than", ">"],["exactly", "=="],["less than", "<"]]) %>
+    <%= text_field_tag "achievement_condition[total_value]", "how many" %>
+    where <%= text_field_tag "achievement_condition[comparison_attribute]", "comparison method" %>
     is 
-    <%= select_tag "achievement_condition[comparison_operator]", options_for_select([["more than", ">"],["exactly", "=="],["less than", "<"]]) %>
-    <%= text_field_tag "achievement_condition[comparison_value]" %>
+    <%= select_tag "achievement_condition[comparison_operator]", options_for_select([["greater than", ">"],["exactly", "=="],["less than", "<"]]) %>
+    <%= text_field_tag "achievement_condition[comparison_value]", "comparison value" %>
   </div>
   <div class="actions">
     <%= f.submit %>
