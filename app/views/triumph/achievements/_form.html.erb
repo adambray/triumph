@@ -24,12 +24,15 @@
     <%= f.text_field :observe_class %>
   </div>
   <div class="field">
-    <%= f.label :conditions %><br />
-    <%= f.text_field :conditions %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
+    Grant this achievement when a user has more than
+    <%= f.text_field :quantity %> objects and
+    <br />
+    <%= select_tag "achievement_condition[total_operator]", options_for_select([["more than", ">"],["exactly", "=="],["less than", "<"]]) %>
+    <%= text_field_tag "achievement_condition[total_value]" %>
+    where <%= text_field_tag "achievement_condition[comparison_attribute]" %>
+    is 
+    <%= select_tag "achievement_condition[comparison_operator]", options_for_select([["more than", ">"],["exactly", "=="],["less than", "<"]]) %>
+    <%= text_field_tag "achievement_condition[comparison_value]" %>
   </div>
   <div class="actions">
     <%= f.submit %>

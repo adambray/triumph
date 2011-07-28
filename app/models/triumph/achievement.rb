@@ -18,29 +18,11 @@ module Triumph
       potential_achievements.each do |achievement|
         total = user.send(object.class.to_s.pluralize.underscore.to_sym).count
         if total >= achievement.quantity
-          grant_achievement = true
+          condition_results = []
           achievement.achievement_conditions.each do |condition|
-            total_value = condition.total_value
-            objects = user.send(object.class.to_s.pluralize.underscore.to_sym)
-            
-            unless objects.empty?
-              case objects.first.send(condition.comparison_attribute)
-              when Integer
-                comparison_value = condition.comparison_value.to_i
-              when Float
-                comparison_value = condition.comparison_value.to_f
-              when TrueClass, FalseClass
-                comparison_value = condition.comparison_value == "true" ? true : false
-              end
-            end
-                
-            objects_meeting_condition = objects.select{|o| o.send(condition.comparison_attribute).send(condition.comparison_operator, comparison_value)}.count
-
-            if !objects_meeting_condition.send(condition.total_operator.to_s, total_value)
-              grant_achievemnt = false
-            end            
+            condition.check(object)
           end
-          user.grant_achievement(achievement) if grant_achievement
+          user.grant_achievement(achievement) unless condition_results.include? false
         end
       end
     end

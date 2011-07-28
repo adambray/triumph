@@ -42,15 +42,18 @@ module Triumph
     # POST /achievements.xml
     def create
       @achievement = Achievement.new(params[:triumph_achievement])
+      @achievement.observe_class.downcase!
 
-      respond_to do |format|
-        if @achievement.save
-          format.html { redirect_to(@achievement, :notice => 'Achievement was successfully created.') }
-          format.xml  { render :xml => @achievement, :status => :created, :location => @achievement }
+      if @achievement.save
+        achievement_condition = AchievementCondition.new(params[:achievement_condition])
+        achievement_condition.achievement_id = @achievement.id
+        if achievement_condition.save
+          redirect_to(@achievement, :notice => 'Achievement was successfully created.')
         else
-          format.html { render :action => "new" }
-          format.xml  { render :xml => @achievement.errors, :status => :unprocessable_entity }
+          flash[:error] = "Failed to save achievement conditions"
         end
+      else  
+        render :action => "new"
       end
     end
 
@@ -58,7 +61,8 @@ module Triumph
     # PUT /achievements/1.xml
     def update
       @achievement = Achievement.find(params[:id])
-
+      @achievement.observe_class.downcase!
+      
       respond_to do |format|
         if @achievement.update_attributes(params[:triumph_achievement])
           format.html { redirect_to(@achievement, :notice => 'Achievement was successfully updated.') }
